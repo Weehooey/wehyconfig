@@ -1,0 +1,4 @@
+[vms]
+name = "helicopter"
+location = "PVE"
+drives = [8, 16, 9, 7]

@@ -1,0 +1,19 @@
+[main]
+root_folder = "/tmp"
+
+[logging]
+level = "DEBUG"
+# a = append
+# w = overwrite
+filemode = "a"
+log_format = "%(asctime)s [%(module)s] %(message)s"
+
+[alerts.email]
+to_addresses = ["dev-bunnies@weehooey.com", "dev-ewoks@weehooey.com", "dev-pandas@weehooey.com"]
+from_address = "test-system-42@weehooey.com"
+subject = "Toilet Paper Levels"
+smtp_server = "mx-42.weehooey.com"
+
+[alerts.sms]
+to_numbers = ["343-555-1212", "705-555-1212", "905-555-1212"]
+from_number = "613-555-1212"

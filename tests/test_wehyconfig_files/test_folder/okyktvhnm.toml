@@ -1,0 +1,5 @@
+[vms]
+name = "torpedo"
+location = "PBS"
+depth = [80, 160, 9, 7.5]
+comments = "This is not the config you are looking for!"
