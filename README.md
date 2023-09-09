@@ -1,2 +1,2 @@
 # wehyconfig
-Simple TOML config reader
+A simple TOML config reader.
