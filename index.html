@@ -203,20 +203,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#wehyconfig.wehyconfig" class="md-nav__link">
-    wehyconfig
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wehyconfig.wehyconfig.read_config" class="md-nav__link">
-    read_config()
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -258,20 +244,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#wehyconfig.wehyconfig" class="md-nav__link">
-    wehyconfig
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wehyconfig.wehyconfig.read_config" class="md-nav__link">
-    read_config()
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -295,149 +267,6 @@
 <li>Pass it a configuration file (TOML) and optionally a section within the file. Returns a dictionary.</li>
 <li>Pass it a folder with configuration files (TOML) and it will return a dictionary of all the files.</li>
 </ul>
-
-
-<div class="doc doc-object doc-module">
-
-
-
-<a id="wehyconfig.wehyconfig"></a>
-  <div class="doc doc-contents first">
-  
-      <p>A simple configuration file parser.</p>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-
-
-<h2 id="wehyconfig.wehyconfig.read_config" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">read_config</span><span class="p">(</span><span class="n">config_source</span><span class="p">,</span> <span class="n">section</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span></code>
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Read the specified configuration file.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>config_source</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A path to either a configuration file or
-a directory containing one or more configuration files.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>section</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>If the config_source is a single file, you can
-specify a section within the configuration file.</p>
-            </div>
-          </td>
-          <td>
-                <code>&#39;&#39;</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-      <p>Returns:
-    dict: A Python dictionary representation of the configuration file.</p>
-
-          <details class="quote">
-            <summary>Source code in <code>wehyconfig/wehyconfig.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">read_config</span><span class="p">(</span><span class="n">config_source</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">section</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Read the specified configuration file.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        config_source (str): A path to either a configuration file or</span>
-<span class="sd">            a directory containing one or more configuration files.</span>
-<span class="sd">        section (str): If the config_source is a single file, you can</span>
-<span class="sd">            specify a section within the configuration file.</span>
-<span class="sd">    Returns:</span>
-<span class="sd">        dict: A Python dictionary representation of the configuration file.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">config_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">config_source</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">config_path</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
-        <span class="n">config_files</span> <span class="o">=</span> <span class="n">_get_config_files</span><span class="p">(</span><span class="n">config_path</span><span class="p">)</span>
-        <span class="n">config</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="k">for</span> <span class="n">config_file</span> <span class="ow">in</span> <span class="n">config_files</span><span class="p">:</span>
-            <span class="n">config</span><span class="p">[</span><span class="n">config_file</span><span class="o">.</span><span class="n">stem</span><span class="p">]</span> <span class="o">=</span> <span class="n">_read_config_file</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">config_path</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
-        <span class="n">config</span> <span class="o">=</span> <span class="n">_read_config_file</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="n">section</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">config</span>
-</code></pre></div></td></tr></table></div>
-          </details>
-  </div>
-
-</div>
-
-
-
-  </div>
-
-  </div>
-
-</div>
 
 
 
