@@ -1,0 +1,10 @@
+site_name: wehyconfig Documentation
+theme:
+  name: "material"
+
+plugins:
+  - mkdocstrings
+
+nav:
+  - wehyconfig: index.md
+
