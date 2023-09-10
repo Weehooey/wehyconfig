@@ -1,17 +1,12 @@
-# Welcome to MkDocs
+# wehyconfig Documentation
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+A simple TOML configuration reader.
 
-## Commands
+## Usage
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+- A single function: `read_config()`
+- Pass it a configuration file (TOML) and optionally a section within the file. Returns a dictionary.
+- Pass it a folder with configuration files (TOML) and it will return a dictionary of all the files.
 
-## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+::: wehyconfig.wehyconfig
