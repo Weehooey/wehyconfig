@@ -1,5 +1,6 @@
 .PHONY: install clean-venv \
-	run test
+	run test \
+	site-build site-serve site-deploy
 
 install:
 	@poetry config virtualenvs.in-project true
@@ -19,3 +20,13 @@ run:
 
 test:
 	@poetry run pytest
+
+site-build:
+	@poetry run mkdocs build
+
+site-serve:
+	@poetry run mkdocs serve
+
+site-deploy:
+	@poetry run mkdocs gh-deploy
+

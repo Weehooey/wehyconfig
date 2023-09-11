@@ -1,7 +1,11 @@
 """
-A simple configuration file parser.
+The main module for `wehyconfig`.
 """
-import tomllib
+try:
+    import tomllib
+except ImportError:
+    import tomli as tomllib
+
 from pathlib import Path
 
 

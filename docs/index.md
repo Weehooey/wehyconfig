@@ -1,6 +1,15 @@
 # wehyconfig Documentation
 
-A simple TOML configuration reader.
+A simple TOML configuration parser.
+
+## Requirements
+
+- Python 3.11 or an earlier version with `tomli` package installed.
+
+## Installation
+
+- `pip install wehyconfig`
+- `poetry add wehyconfig`
 
 ## Usage
 
