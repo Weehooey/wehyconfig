@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "wehyconfig"
-version = "0.2.0"
-description = "A simple configuration reader."
+version = "0.0.0"
+description = "A simple parser for TOML configuration files."
 authors = ["Bill Hughes <bill@weehooey.com>"]
 license = "GNU GPLv3"
 readme = "README.md"

@@ -1,6 +1,6 @@
 # wehyconfig Documentation
 
-A simple TOML configuration parser.
+A simple parser for TOML configuration files.
 
 ## Requirements
 
