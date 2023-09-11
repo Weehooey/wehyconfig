@@ -9,7 +9,7 @@ homepage = "https://weehooey.github.io/wehyconfig"
 repository = "https://github.com/Weehooey/wehyconfig"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.9"
 mkdocs = "^1.5.2"
 mkdocs-material = "^9.2.8"
 mkdocstrings = {extras = ["python"], version = "^0.23.0"}
