@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "wehyconfig"
-version = "0.2.0"
-description = "A simple configuration reader."
+version = "0.0.0"
+description = "A simple parser for TOML configuration files."
 authors = ["Bill Hughes <bill@weehooey.com>"]
 license = "GNU GPLv3"
 readme = "README.md"
@@ -9,7 +9,7 @@ homepage = "https://weehooey.github.io/wehyconfig"
 repository = "https://github.com/Weehooey/wehyconfig"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.9"
 mkdocs = "^1.5.2"
 mkdocs-material = "^9.2.8"
 mkdocstrings = {extras = ["python"], version = "^0.23.0"}
